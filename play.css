@@ -1,0 +1,22 @@
+#max{
+    display: flex;
+    flex-direction: column;
+    margin: 10% 20%;
+    text-align: center;
+}
+#max div {
+    margin: 5px 0;
+}
+.info{
+    font-size: 35px;
+}
+.display{
+    font-size: 100px;
+    height: 200px;
+}
+.input span{
+    border: 1px solid;
+    padding: 3px;
+    border-radius: 7px;
+    cursor: pointer;
+}
