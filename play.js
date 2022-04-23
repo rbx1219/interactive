@@ -49,18 +49,18 @@ function judgeGuess() {
     const answer = game.answer;
     
     if (guess <= game.start || guess >= game.end){
-        document.getElementById("prompt").innerHTML = "超出範圍囉"
+        document.getElementById("prompt").innerHTML = guess + "超出範圍囉"
         return;
     }
 
     if (answer > guess) {
-        document.getElementById("prompt").innerHTML = "再高一點";
+        document.getElementById("prompt").innerHTML = guess + "再高一點";
         game.start = guess;
     } else if (answer < guess) {
-        document.getElementById("prompt").innerHTML = "再低一點";
+        document.getElementById("prompt").innerHTML = guess + "再低一點";
         game.end = guess;
     } else {
-        document.getElementById("prompt").innerHTML = "BINGO";
+        document.getElementById("prompt").innerHTML = guess + "BINGO";
     }
 }
 function onHistory() {
