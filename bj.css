@@ -4,9 +4,12 @@ body{
     align-items: center;
 }
 span{ 
+
     display: block;
-    background-color: yellow;
-    cursor: pointer;
+    background: -webkit-linear-gradient(left top,yellow,red);
+    background: -o-linear-gradient(bottom right,yellow,red);
+    background: -moz-linear-gradient(bottom right,yellow,red);
+    background: linear-gradient(to bottom right,yellow,red);    cursor: pointer;
     width: 100px;
     height: 100px;
     border-radius: 100px;
