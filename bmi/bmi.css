@@ -1,0 +1,7 @@
+table {
+    background-color: antiquewhite;
+    border: 2px solid;
+}
+table td{
+    background-color: rgb(252, 181, 88);
+}
