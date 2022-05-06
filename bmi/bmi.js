@@ -1,9 +1,9 @@
 function Onclick(){
-    var height = document.getElementById("height");
-    var m = (height.value)/100;
-    var weight = document.getElementById("weight");
-    var kg = Math.abs(weight.value);
-    var bmi = kg/(m)**2;
+    const height = document.getElementById("height");
+    const m = (height.value)/100;
+    const weight = document.getElementById("weight");
+    const kg = Math.abs(weight.value);
+    const bmi = kg/(m)**2;
     if (bmi < 18.5) {
         document.getElementById("information").innerHTML = "BMI:體重過輕";
         document.getElementById("information").style.color = "green";
