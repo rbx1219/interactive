@@ -10,29 +10,21 @@ body{
     display: flex;
     border: 2px solid;
     border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
 }
-#start{ 
-    display: block;
+.button{ 
+    display: flex;
     background: -webkit-linear-gradient(left top,yellow,red);
     background: -o-linear-gradient(bottom right,yellow,red);
     background: -moz-linear-gradient(bottom right,yellow,red);
     background: linear-gradient(to bottom right,yellow,red);    cursor: pointer;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     border-radius: 50px;
-    margin-bottom: 20px;
-}
-#stop{
-    display: block;
-    background: -webkit-linear-gradient(left top,yellow,red);
-    background: -o-linear-gradient(bottom right,yellow,red);
-    background: -moz-linear-gradient(bottom right,yellow,red);
-    background: linear-gradient(to bottom right,yellow,red);    
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    margin-bottom: 20px;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
 }
 #player_desk{
     display: flex;                /*background: -webkit-linear-gradient(yellow,red);

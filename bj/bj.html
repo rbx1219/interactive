@@ -7,11 +7,12 @@
         <script src="bj.js"></script>
     </head>
     <body>
-        <div id="information"></div>
         <div class="button_area">
-            <span onclick="Onclick()" id="start"></span>
-            <span onclick="Finsh()" id="stop">完成</span>
+            <div onclick="Onclick()" id="start" class="button">發牌</div>
+            <div onclick="Finsh()" id="stop" class="button">換莊家</div>
+            <div onclick="Reset()" id="reset" class="button">重來一局</div>
         </div>
+        <div id="information"></div>
         <div id="container">
             player<div id="player_desk"></div>
             banker<div id="banker_desk"></div>

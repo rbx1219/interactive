@@ -4,6 +4,11 @@ function shuffleArray(inputArray){
 
 function init(){
     initGameValues();
+    initUI();
+}
+
+function Reset() {
+    init();
 }
 
 function initGameValues(){
@@ -19,6 +24,30 @@ function initGameValues(){
     game.banker_count = 0;
     game.player_points = 0;
     game.banker_points = 0; 
+}
+
+function initUI() {
+    const player_desk = document.getElementById("player_desk");
+    const banker_desk = document.getElementById("banker_desk");
+    const information = document.getElementById("information");
+    const start = document.getElementById("start");
+    const stop = document.getElementById("stop");
+    if (player_desk) {
+        player_desk.innerHTML = "";
+    } 
+    if (banker_desk) {
+        banker_desk.innerHTML = "";
+    }
+    if (information) {
+        information.innerHTML = "";
+    }
+    if (start) {
+        start.style.display = "flex";
+    }
+    if (stop) {
+        stop.style.display = "flex";
+    }
+
 }
 
 function Onclick(){
@@ -87,6 +116,7 @@ function player_think() {
 
 function Finsh(){
     document.getElementById("start").style.display = "none";
+    document.getElementById("stop").style.display = "none";
     banker_turn();
 }
 
@@ -109,20 +139,24 @@ function banker_think() {
 
 }
 
+
+
 function banker_turn() {
     const parent = document.getElementById("banker_desk");
     const pointmapping = [1,2,3,4,5,6,7,8,9,10,0.5,0.5,0.5];
-    let status = "draw";
-    while(status == "draw") {
-        const point = game.deck[game.count];
-        game.count += 1;
-        game.banker_count += 1;
-        game.banker_points += pointmapping[point%13];
-        parent.appendChild(GetCardUI(point));
-        status = banker_think();
-
+    let status = "";
+    
+    const point = game.deck[game.count];
+    game.count += 1;
+    game.banker_count += 1;
+    game.banker_points += pointmapping[point%13];
+    parent.appendChild(GetCardUI(point));
+    status = banker_think();
+    if (status == "draw") {
+        setTimeout(banker_turn,1000);
     }
 }
+
 
 window.game = {}
 init();
