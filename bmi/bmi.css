@@ -5,3 +5,11 @@ table {
 table td{
     background-color: rgb(252, 181, 88);
 }
+#question{
+    border: 2px solid;
+    background-color: aqua;
+    float: right;
+    padding: 2px;
+    cursor: pointer;
+
+}

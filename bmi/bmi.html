@@ -11,18 +11,18 @@
             <form>
                 <tr>
                     <td><label for="height">身高(公分):</label></td>
-                    <td><input type="number" name="height" id="height"><br/></td>
+                    <td><input type="number" name="height" id="height" value="170"><br/></td>
                 </tr>
                 <tr>
                     <td><label for="weight">體重(公斤):</label></td>
-                    <td><input type="number" name="weight" id="weight"><br/></td>
+                    <td><input type="number" name="weight" id="weight" value="50"><br/></td>
                 </tr>
                 <tr>
                     <td><button type="button" onclick="Onclick()">送出</button></td>
-                    <td><span id="information">BMI:數值</span></td>
+                    <td style="position: relative;"><span id="information">BMI:數值</span>
+                    <span id="question" onclick="Onhelp()">怎麼辦</span></td>
                 </tr>
             </form>
-            
-        </table>
-    </body>
+        </table>   
+        </body>
 </html>
