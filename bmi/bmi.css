@@ -6,6 +6,7 @@ table td{
     background-color: rgb(252, 181, 88);
 }
 #question{
+    display: none;
     border: 2px solid;
     background-color: aqua;
     float: right;

@@ -10,6 +10,7 @@ function bmivalues() {
     BMI.weight = weight;
     BMI.kg = kg;
     BMI.bmi = (kg/(m)**2).toFixed(2);
+    document.getElementById("question").style.display = "block";
 }
 
 function Onclick(){
