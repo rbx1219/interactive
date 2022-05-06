@@ -15,6 +15,8 @@ function initGameValues(){
     console.log(deck);
     game.deck = deck;
     game.count = 0;
+    game.player_count = 0;
+    game.banker_count = 0;
     game.player_points = 0;
     game.banker_points = 0; 
 }
@@ -24,6 +26,7 @@ function Onclick(){
     const point = game.deck[game.count];
     const pointmapping = [1,2,3,4,5,6,7,8,9,10,0.5,0.5,0.5];
     game.count += 1;
+    game.player_count += 1;
 
     
     game.player_points += pointmapping[point%13];
@@ -83,17 +86,42 @@ function player_think() {
 }
 
 function Finsh(){
+    document.getElementById("start").style.display = "none";
+    banker_turn();
+}
+
+function banker_think() {
+    let status = "";
+    if(game.banker_points>10.5){
+        status = "lose";
+        document.getElementById("information").innerHTML = "莊家輸了,";
+        document.getElementById("information").innerHTML += "點數："+game.banker_points;
+    } else if (game.banker_points == 10.5 || game.banker_count == 5 || game.banker_points>game.player_points) {
+        status = "win";
+        document.getElementById("information").innerHTML = "莊家贏了,";
+        document.getElementById("information").innerHTML += "點數："+game.banker_points;
+
+    } else{
+        status = "draw";
+        document.getElementById("information").innerHTML = "莊家點數："+game.banker_points;
+    }
+    return status;
+
+}
+
+function banker_turn() {
     const parent = document.getElementById("banker_desk");
-    const point = game.deck[game.count];
     const pointmapping = [1,2,3,4,5,6,7,8,9,10,0.5,0.5,0.5];
-    game.count += 1;
+    let status = "draw";
+    while(status == "draw") {
+        const point = game.deck[game.count];
+        game.count += 1;
+        game.banker_count += 1;
+        game.banker_points += pointmapping[point%13];
+        parent.appendChild(GetCardUI(point));
+        status = banker_think();
 
-    
-    game.banker_points += pointmapping[point%13];
-    player_think();
-
-    
-    parent.appendChild(GetCardUI(point));
+    }
 }
 
 window.game = {}
